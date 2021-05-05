@@ -1,0 +1,263 @@
+
+/**
+ * Write a description of class project_grocery here.
+ *
+ * @author (your name)
+ * @version (a version number or a date)
+ */
+import java.util.*;
+public class project_grocery
+{
+     public static void main (String args[])
+	{
+         Scanner in=new Scanner (System.in);
+         int vstr,tvstr=0,nvstr,tnvstr=0,vfd,tvfd=0,nvfd,tnvfd=0,fd,tfd=0,amt=0,tamt=0,tamt1=0,tamt2=0,totald=0,damt=0,ch;
+         double gst=0,tot,gtotal;
+         String str="",choice,choice1="Y";
+         System.out.println("Welcome to the Grocery Store");
+         System.out.println("Daily Use");
+         System.out.println("Food Items");
+         System.out.println();
+         while(choice1.equalsIgnoreCase("Y"))
+         {
+            System.out.println("Enter 1 for Daily Use");
+            System.out.println("Enter 2 for Food Items");
+            System.out.println();
+            System.out.println("Enter your Choice");
+            ch=in.nextInt();
+            switch (ch)
+            {
+                case 1:
+                System.out.println("Welcome to Daily use");
+                System.out.println("Enter 'Br' for Branded products and 'NVS' for non Branded products");
+                str=in.next();
+                if (str.equalsIgnoreCase("Br"))
+                {
+                    System.out.println("Daily use/t/t/t price in ruppess");
+                    System.out.println("1.Patanjali Biscuit/t/t/t/t110 ");
+                    System.out.println("2.Patanjali dant kanti/t/t/t/110");
+                    System.out.println("3.Santoor handwash/t/t/t110");
+                    System.out.println("4.Santoor soap/t/t/t150");
+                    System.out.println("5.Dettol handwash/t/t/t150");
+                    System.out.println("6.Dettol soap/t/t/t140");
+                    System.out.println("7.Dettol antiseptic/t/t/t140");
+                    System.out.println("8.Lux Soap/t/t/t120");
+                    System.out.println("9.Lux handwash/t/t/t120");
+                    System.out.println("10.Lifebuoy Soap/t/t/t150");
+                    System.out.println();
+                    choice="y";
+                    while(choice.equalsIgnoreCase("Y"))
+                    {
+                        System.out.println("Choose the Branded Daily use items by entering number:");
+                        vstr=in.nextInt();
+                        System.out.println("Enter the quantity");
+                        tvstr=in.nextInt();
+                        if(vstr>=1 && vstr<=3)
+                        amt=tvstr*110;
+                        if(vstr ==4|| vstr ==5||vstr==10)
+                        amt=tvstr*150;
+                        if(vstr ==6|| vstr ==7)
+                        amt=tvstr*140;
+                        if(vstr ==8|| vstr ==9)
+                        amt=vstr*120;
+                        tamt=tamt+amt;
+                        System.out.println("Do you want to place more order?Enter Y/N");
+                        choice=in.next();
+                    }
+                }
+                if(str.equalsIgnoreCase("NVS"))
+                {
+                    System.out.println("Non Branded\t\t\tPrice in Rs.");
+                    System.out.println("1.Brush\t\t\t\t170");
+                    System.out.println("2.Paste\t\t\t170");
+                    System.out.println("3.Biscuit\t\t\t160");
+                    System.out.println("4.Handwash\t\t\t180");
+                    System.out.println("5.Soap\t\t\t\t180");
+                    System.out.println("6.Shampoo\t\t\t\t190");
+                    System.out.println("7.Detergent\t\t\t190");
+                    System.out.println("8.Oil\tt\t160");
+                    System.out.println("9.Cream\t\t\t180");
+                    System.out.println("10.Comb\t\t\t180");
+                    choice="Y";
+                    while(choice.equalsIgnoreCase("Y"))
+                    {
+                        System.out.println("Choose theNon Branded Daily Use by entering number:");
+                        nvstr =in.nextInt();
+                        System.out.println("Enter the quantity:");
+                        tnvstr=in.nextInt();
+                        if(nvstr==1||nvstr==2)
+                        amt=tnvstr*170;
+                        if(nvstr==3||nvstr==8)
+                        amt=tnvstr*160;
+                        if(nvstr==4||nvstr==5||nvstr==9||nvstr==10)
+                        amt=tnvstr*180;
+                        if(nvstr==6||nvstr==7)
+                        amt=tnvstr*190;
+                        tamt=tamt+amt;
+                        System.out.println("Do you want to place more order?Enter Y/N");
+                        choice=in.next();
+                    }
+                }
+                break;
+                case 2:
+                System.out.println("Food Items:Veg Masala and Non veg Masala!");
+                System.out.println("Enter V for Indian Veg Dishes NV for Indian Non-Veg Dishes and C for Chinese Dishes");
+                
+                str=in.next();
+                System.out.println();
+                if(str.equalsIgnoreCase("V"))
+                {
+                    System.out.println("Veg Masalas");
+                    System.out.println("Indian Veg Dishes Masala\t\t\t\t Price in Rs.");
+                    System.out.println("1.Shahi Paneer Masala\t\t\t\t\t\t180");
+                    System.out.println("2.Navratan Korma Masala\t\t\t\t\t180");
+                    System.out.println("3.Kadahi Paneer Masala\t\t\t\tlt\t150");
+                    System.out.println("4.Malai Kofta Masala\t\t\t\t\t\t140");
+                    System.out.println("5.Kadahi Vegetable Masala\t\t\t\t\t140");
+                    System.out.println("6.Vegetable Pakeeza Masala\t\t\t\t\t140");
+                    System.out.println("7.Shabnam Curry Masala\t\t\t\t\t\t150");
+                    System.out.println("8.Makai Corn Palak Masala\t\t\t\t\t150");
+                    System.out.println("9.Veg.Pulao Masala\t\t\t\t\t\t110");
+                    System.out.println("10.Kashmiri Pulao Masala\t\t\t\t\t140");
+                    System.out.println("11.Butter Naan Masala\t\t\t\t\t\t40");
+                    System.out.println("12.Stuffed Kulcha Masala\t\t\t\t\t60");
+                    choice="Y";
+                    while(choice.equalsIgnoreCase("Y"))
+                    {
+                        System.out.println("Choose the Item by entering number:");
+                        vfd=in.nextInt();
+                        System.out.println("Enter the quantity");
+                        tvfd=in.nextInt() ;
+                        if(vfd==1||vfd==2)
+                        amt=tvfd*180;
+                        if(vfd==3||vfd==7||vfd==8)
+                        amt=tvfd*150;
+                        if(vfd==4||vfd==5||vfd==6||vfd==10)
+                        amt=tvfd*140;
+                        if(vfd==9)
+                        amt=tvfd*110;
+                        if(vfd==11)
+                        amt=tvfd*40;
+                        if(vfd==12)
+                        amt=tvfd*60;
+
+                        tamt1=tamt1+amt;
+                        System.out.println("Do you want to place more order? Enter Y/N");
+    
+                        choice=in.next();
+
+                    }
+                }
+                if(str.equalsIgnoreCase("NV"))
+                
+                {
+
+                    System.out.println("Non veg Masalas");
+                    System.out.println("Indian Non-Veg Dishes\t\t\t\t Price in Rs.");
+                    System.out.println("1.Chicken Tikka Masala\t\t\t\t\t180");
+                    System.out.println("2.Chicken Tikka Labadar Masala\t\t\t\t\t180");
+                    System.out.println("3.Chicken Bharta Masala\t\t\t\t\t150");
+                    System.out.println("4.Kadahi Chicken Masala\t\t\t\t\t160");
+                    System.out.println("5.Mughlai Chicken Masala\t\t\t\t\t160");
+                    System.out.println("6.Murg Navratan Korma Masala\t\t\t\t\t160");
+                    System.out.println("7.Chicken Do Pyaza Masala\t\t\t\t\t170");
+                    System.out.println("8.Murg Masallam Masala\t\t\t\t\t\t 170");
+                    System.out.println("9.Mutton Rogan Josh Masala\t\t\t\t\t190");
+                    System.out.println("10.Prawn Malai Curry Masala\t\t\t\t\t190");
+                    System.out.println("11.Fish Sarsowala Masala\t\t\t\t\t140");
+                    System.out.println("12.Fish Dhaniawala Masala\t\t\t\t\t160");
+                    choice="Y";
+
+                    while(choice.equalsIgnoreCase("Y"))
+    
+                    {
+                        System.out.println("Choose the Item by entering number: ");
+                        
+                        vfd=in.nextInt();
+                        System.out.println("Enter the quantity");
+                        tvfd=in.nextInt();
+    
+                        if(vfd==1||vfd==2)
+                        
+                        amt=tvfd*180;
+                        
+                        if(vfd==3)
+                        
+                        amt=tvfd*150;
+                        if(vfd==4||vfd==5||vfd==6||vfd==12)
+                        amt=tvfd*160;
+    
+                        if(vfd==7||vfd==8)
+                    
+                        amt=tvfd*170;
+                        if(vfd==9||vfd==10)
+                        amt=tvfd*190;
+                        if(vfd==11)
+                        amt=tvfd*140;
+                        tamt1=tamt1+amt;
+                        System.out.println("Do you want to buy more Items? Enter Y/N");
+                        choice=in.next();
+                    }
+                }
+                if(str.equalsIgnoreCase("C"))
+                
+                {
+                    System.out.println(" Chinese Dishes Masala");
+                    System.out.println("Chinese Dishes /t/t/t/t Price in Rs.");
+                    System.out.println("1.Schezwan Fried Rice /t/t/t/t240");
+                    System.out.println("2.Schezwan Chicken/t/t/t/tr280");
+                    System.out.println("3.Chilly Chicken/t/t/t/t280");
+                    System.out.println("4.Chicken Noodlel/t/t/t/t210");
+                    System.out.println("5.Veg. Hakka Noodlel/t/t/t/t210");
+                    System.out.println("6.Chicken Manchurian/t/t/t/tI90");
+                    System.out.println("7.Paneer Manchurian/t/t/t/t 190");
+                    System.out.println("8.Chilly Paneer/t/t/t/t/t190");
+                    System.out.println("9.Sanghai Fried Rice/t/t/t/t240");
+                    System.out.println("10. Veg. Fried rice/t/t/t/t210");
+                    System.out.println("11.Chicken Fried Rice/t/t/t/t210");
+                    System.out.println("12.Kimchi Rice Veg. /t/t/t/t210");
+                    choice="Y";
+                    while(choice.equalsIgnoreCase("Y"))
+                    {
+                        System.out.println("Choose the item by entering number: ");
+                        fd=in.nextInt();
+                        System.out.println("Enter the quantity");
+                        tfd=in.nextInt();
+                        if(fd==1||fd==9)
+                        amt=tfd* 240;
+                        if(fd==2||fd==3)
+                        amt=tfd*280;
+                        if(fd==4||fd==5||fd==10||fd==11 ||fd==12)
+                        amt=tfd*210;
+                        if(fd==6||fd==7||fd==8)
+                        amt=tfd* 190;
+                        tamt1=tamt1+amt;
+                        System.out.println("Do you want to buy more items?enter Y/N");
+                        choice=in.next();
+
+                    }
+                }
+
+                break;
+                default:
+                System.out.println("You have entered wrong choice!." );
+            }
+            System.out.println("Enter 'Y' to go to Main Menu!!");
+            choice1=in.next();
+        }
+        System.out.println("*** ****Grocery Store*********");
+        System.out.println("**********Daily Use*************");
+        System.out.println("Total cost of Daily Use= Rs."+tamt);
+        System.out.println("**********Food Items***** ********");
+        System.out.println("Total cost of Food items= Rs."+tamt1);
+        tot=tamt+tamt1 ;
+        gst=tot*18.0/100.0;
+        System.out.println("GST =Rs. "+gst);
+        gtotal=tot+gst;
+        System.out.println("Amount to be paid Rs.= "+gtotal);
+        System.out.println("Thanks for visiting Grocery Store!!");
+        System.out.println("Your Pleasure Our Comfort!");
+        System.out.println("Visit Again!!!");
+
+    }
+}
